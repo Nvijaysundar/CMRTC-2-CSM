@@ -45,3 +45,32 @@ Processed Mission Logs:
 5202DATS700tnegA | Midnight Fox | HIGH | Morning Operation
 5202DATS132tnegA | Silent Eagle | HIGH | Afternoon Operation
 5202DATS999tnegA | Snow Wolf | LOW | Morning Operation
+
+
+
+import java.util.StringTokenizer;
+
+public class GIthibProb {
+	public static void main(String[] args) {
+		String s = "[Agent007] Operation Midnight_Fox 2025/07/12 09:30AM-"
+				+ "[Agent231] Operation Silent_Eagle 2025/07/12 02:45PM-"
+				+ "[Agent999] Operation Snow_Wolf 2025/07/12 10:10AM";
+		
+		StringTokenizer operations = new StringTokenizer(s,"-");
+		while(operations.hasMoreTokens())
+		{
+			String operation = operations.nextToken();
+			StringTokenizer operationBreak = new StringTokenizer(operation);
+			while(operationBreak.hasMoreElements())
+			{
+				String agent = operationBreak.nextToken();
+				agent = new StringBuffer(
+						agent.replaceAll("[\\[\\]]", "").concat("STAD2025").toUpperCase()
+						).reverse().toString();
+				System.out.println(agent);
+				
+				
+			}
+		}
+	}
+}
