@@ -71,5 +71,69 @@ Sophia_Jones*B19@JET605#07:40PM$NEWYORK
 Processed Boarding Intelligence Summary:
 nostaW aryMAAIVB2025 | LONDON | Commercial Airline | Front Zone Passenger | Morning Shift | Priority Boarding
 roopaK nujrAA AIVB2025 | DUBAI | Government Carrier | Rear Zone Passenger | Day Shift | Normal Boarding
-senoJ aihpoSBAAIVB2025 | NEWYORK | Commercial Airline | Front Zone Passenger | Night Shift | Priority Boarding
+senoJ aihpoSBAAIVB2025 | NEWYORK | Commercial Airline | Front Zone Passenger | Night Shift | Normal Boarding
+
+
+import java.util.StringJoiner;
+import java.util.StringTokenizer;
+
+public class PassengerDetails {
+	public static void main(String[] args) {
+		String details = "Myra_Watson*A10@SKY980#09:15AM$LONDON\n"+
+			"Arjun_Kapoor*C22@AIV420#01:55PM$DUBAI\n"+
+			"Sophia_Jones*B19@JET605#07:40PM$NEWYORK\n"+
+			"Arjun_Kapoor*C22@AIV420#01:55PM$DUBAI";
+		
+		StringTokenizer st = new StringTokenizer(details,"\n");
+		while(st.hasMoreTokens())
+		{
+			StringJoiner sj = new StringJoiner(" | ");
+			StringTokenizer current = new StringTokenizer(st.nextToken(),"*@#$");
+			String name = new StringBuffer(current.nextToken().replace("_"," "))
+					.reverse().toString();
+			
+			
+			String seatNumber = current.nextToken();
+			String airLine = current.nextToken();	
+			String scheduled = current.nextToken();
+			String destination = current.nextToken();
+			
+			name = name.concat(seatNumber.substring(0,1)).concat("AIVB2025");
+			sj.add(name);
+			sj.add(destination);
+			
+			if(airLine.startsWith("AIV"))
+				sj.add("Government Carrier");
+			else
+				sj.add("Commercial Airline");
+			
+			
+			if (Integer.parseInt(seatNumber.substring(1))>20)
+				sj.add("Rear Zone Passenger");
+			else
+				sj.add("Front Zone Passenger");
+			
+			//10:20AM
+			if(scheduled.contains("AM"))
+				sj.add("Morning Shift");
+			else
+			{
+				int hours = Integer.parseInt(scheduled.substring(0, 2));
+				if(hours==12 || hours<5)
+					sj.add("Day Shift");
+				else
+					sj.add("Night Shift");
+			}
+				
+			if((destination.equalsIgnoreCase("Newyork") || 
+				destination.equalsIgnoreCase("London")) &&scheduled.contains("AM"))
+				sj.add("Priority Boarding");
+			else
+				sj.add("Normal Boarding");
+			
+			System.out.println(sj.toString());
+		}
+	}
+}
+
 
