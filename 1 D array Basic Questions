@@ -1,0 +1,31 @@
+1. Write a program for finding max values from array
+2. write a program for finding least values from array
+3. write a program for finding sum of even elements and odd element
+4. Write a program for finding sum of even position and odd position
+5. Write a program for finding no of palindromes 
+6. WAP for finding no of prime Numbers
+7. WAP for finding Pairs where sum of each pair is equals to K
+	ex:	
+	5
+	4 2 5 6 8
+	10
+	o/p:
+	(4,6) ,(2,8)
+8. WAP for finding max sum of contiguous Sub array with length K(Contiguous = Continuous)
+    ex : 	
+	6
+	2,1,5,1,3,2  
+	3
+	O/P:
+	9
+
+9. WAP for removing duplicates from array
+	ex : 
+	5
+	1 1 1 2 2	
+	o/p: 1 2
+10 WAP for rearranging 0's and 1's (with out sort method / sorting techniques)
+	ex 	
+	6	
+	1 0 0 1 1 0
+	0 0 0 1 1 1
