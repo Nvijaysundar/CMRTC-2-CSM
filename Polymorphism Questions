@@ -1,0 +1,32 @@
+Q 1) 
+Write a class Account that will account number, name of account holder, balance as
+member data and have following member function:
+A. Zero argument and parameterized constructors ,print method
+B. Write a method that will take one Account object and money as argument and
+deposit money in this account.
+C. Write a method that will take one Account and money as argument and
+withdraw money from this account. Give proper message if balance is not
+available.
+D. Write a method that will take two Account and money as argument and return an
+account having max balance
+
+Q 2)
+Design a class Product with productid,productname,productprice as instance variable
+And make following members methods
+a) Zero argument and parameterized constructors ,print method
+b) Override String toString() to return values of Product into a single string object
+c) Write code for counting how many object of Product class created using static
+block,initializer block,static variable
+d) Write a static method that will return how many object created
+
+Q 3)
+
+Write class Matrix that have one twoD array of size 3 by 3as instance variable and have
+following methods.
+A. zero arguments and parameterized constructor
+B. Write a method that will take two Matrix as argument and return a Matrix by
+adding both Matrix.
+C. Write a method that will take two Matrix as argument and return a Matrix by
+subtracting both Matrix.
+D. Write a method that will take two Matrix as argument and return a Matrix by
+multiplying both Matrix
